@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Notes - CLOUDVISOR</title>
+<meta name="generator" content="Hugo 0.69.0" />
+<link href="https://dozzaki.github.ioindex.xml" rel="alternate" type="application/rss+xml">
+<link rel="canonical" href="https://dozzaki.github.io/devops/table-of-contents/">
+<link rel="stylesheet" href="https://dozzaki.github.io/css/theme.min.css">
+<script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<link rel="stylesheet" href="https://dozzaki.github.io/css/chroma.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
+<script src="https://dozzaki.github.io/js/bundle.js"></script><style>
+:root {}
+</style>
+<meta property="og:title" content="Notes" />
+<meta property="og:description" content="Introdução Atualmente, a maior mudança no desenvolvimento de software é a frequencia de implantações. As equipes de produto implantam versões para produção mais cedo (e com mais frequencia). Os ciclos de lançamento de meses ou anos estão se tornando raros, especialmente entre aqueles que desenvolvem produtos e serviços baseado em software.
+Os benefícios de ciclos de implantação mais curtos são claros, time to market reduzido, os clientes obtêm valor do produto em menos tempo e o feedback do cliente também flui de volta para a equipe do produto mais rápido, o que significa que a equipe pode iterar os recursos e corrgir problemas mais rapidamente." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dozzaki.github.io/devops/table-of-contents/" />
+<meta property="og:image" content="https://dozzaki.github.io/images/og-image.png"/>
+<meta property="article:published_time" content="2017-10-17T15:26:15+00:00" />
+<meta property="article:modified_time" content="2017-10-17T15:26:15+00:00" /><meta property="og:site_name" content="Cloudvisor Techdocs" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://dozzaki.github.io/images/og-image.png"/>
+
+<meta name="twitter:title" content="Notes"/>
+<meta name="twitter:description" content="Introdução Atualmente, a maior mudança no desenvolvimento de software é a frequencia de implantações. As equipes de produto implantam versões para produção mais cedo (e com mais frequencia). Os ciclos de lançamento de meses ou anos estão se tornando raros, especialmente entre aqueles que desenvolvem produtos e serviços baseado em software.
+Os benefícios de ciclos de implantação mais curtos são claros, time to market reduzido, os clientes obtêm valor do produto em menos tempo e o feedback do cliente também flui de volta para a equipe do produto mais rápido, o que significa que a equipe pode iterar os recursos e corrgir problemas mais rapidamente."/>
+<meta itemprop="name" content="Notes">
+<meta itemprop="description" content="Introdução Atualmente, a maior mudança no desenvolvimento de software é a frequencia de implantações. As equipes de produto implantam versões para produção mais cedo (e com mais frequencia). Os ciclos de lançamento de meses ou anos estão se tornando raros, especialmente entre aqueles que desenvolvem produtos e serviços baseado em software.
+Os benefícios de ciclos de implantação mais curtos são claros, time to market reduzido, os clientes obtêm valor do produto em menos tempo e o feedback do cliente também flui de volta para a equipe do produto mais rápido, o que significa que a equipe pode iterar os recursos e corrgir problemas mais rapidamente.">
+<meta itemprop="datePublished" content="2017-10-17T15:26:15&#43;00:00" />
+<meta itemprop="dateModified" content="2017-10-17T15:26:15&#43;00:00" />
+<meta itemprop="wordCount" content="1311">
+<meta itemprop="image" content="https://dozzaki.github.io/images/og-image.png"/>
+
+
+
+<meta itemprop="keywords" content="" /></head>
+<body><div class="container"><header>
+<h1>CLOUDVISOR</h1>
+<a href="https://github.com/thingsym/hugo-theme-techdoc" class="github"><i class="fab fa-github"></i></a>
+</header>
+<div class="global-menu">
+<nav>
+<ul>
+<li><a href="/">Home</a></li><li class="parent"><a href="">CheatSheets<i class="fas fa-angle-right"></i></a>
+<ul class="sub-menu">
+<li class="child"><a href="/cheatsheets/git/">git</a></li>
+<li class="child"><a href="/cheatsheets/systemd/">systemd</a></li>
+</ul>
+</li></ul>
+</nav>
+</div>
+<div class="content-container">
+<main><h1>Notes</h1>
+<aside class="table_of_contents">
+<h5>Table of Contents</h5><nav id="TableOfContents">
+  <ul>
+    <li><a href="#introdução">Introdução</a></li>
+    <li><a href="#agile">Agile</a></li>
+    <li><a href="#lean">Lean</a></li>
+    <li><a href="#continuous-integration">Continuous Integration</a></li>
+    <li><a href="#continuous-delivery">Continuous Delivery</a></li>
+    <li><a href="#continuous-deployment">Continuous Deployment</a></li>
+    <li><a href="#gerenciamento-de-configuração">Gerenciamento de Configuração</a></li>
+    <li><a href="#infraestrutura-como-código">Infraestrutura como Código</a></li>
+    <li><a href="#estratégias-de-deploy">Estratégias de Deploy</a>
+      <ul>
+        <li><a href="#rolling">Rolling</a></li>
+        <li><a href="#blue-green">Blue-Green</a></li>
+        <li><a href="#canary">Canary</a></li>
+      </ul>
+    </li>
+    <li><a href="#feature-toggle">Feature Toggle</a></li>
+  </ul>
+</nav></aside>
+
+<h2 id="introdução">Introdução</h2>
+<p>Atualmente, a maior mudança no desenvolvimento de software é a frequencia de implantações. As equipes de produto implantam versões para produção mais cedo (e com mais frequencia). Os ciclos de lançamento de meses ou anos estão se tornando raros, especialmente entre aqueles que desenvolvem produtos e serviços baseado em software.</p>
+<p>Os benefícios de ciclos de implantação mais curtos são claros, time to market reduzido, os clientes obtêm valor do produto em menos tempo e o feedback do cliente também flui de volta para a equipe do produto mais rápido, o que significa que a equipe pode iterar os recursos e corrgir problemas mais rapidamente.</p>
+<p>No entenato, essa mudança também cria novos desafios para operações. Com implantações mais frequentes, é mais provável que o código implantado possa afetar negativamente a confiabilidade do serviço ou a experiência do cliente. É por isso que é importante desenvolver estratégias para implantar códigos que minimizem os riscos para o produto e os clientes.</p>
+<p>O desenvolvimento de software ágil quebrou alguns dos silos entre análise, teste e desenvolvimento de requisitos. Implantação, operações e manutenção são outras atividades que sofreram uma separação semelhante do restante do processo de desenvolvimento de software. O movimento DevOps visa remover esses silos e incentivar a colaboração entre desenvolvimento e operações.</p>
+<p align="center">
+  <img src="/images/devops_culture.png">
+</p>
+<blockquote>
+<p>&ldquo;Combinação de cultura, ferramentas e práticas de desenvolvimento de software e operações de sistemas, cujo principal objetivo é aumentar a colaboração entre os envolvidos no processo de entrega de software, de um modo que possamos entregar valor mais rápido e de modo mais confiável.&rdquo;</p>
+</blockquote>
+<p>DevOps tornou-se possível em grande parte devido a uma combinação de novas ferramentas operacionais e práticas estabelecidas de engenharia ágil*, mas essas não são suficientes para obter os benefícios do DevOps. Mesmo com as melhores ferramentas, o DevOps é apenas um buzzword, se você não tem a cultura certa.</p>
+<p>As ferramentas operacionais incluem virtualização, container, cloud computing, gerenciamento de configuração entre outras. Isso geralmente é suportado por práticas de engenharia como integração contínua, desgin evolutivo e código limpo.</p>
+<hr>
+<h2 id="agile">Agile</h2>
+<p>É uma metodologia de desenvolvimento de software com foco em iterações pequenas e incrementais gerando releases de software rápidas, contínua e com ritmo constante e sustentável, junto com o feedback do cliente ele aborda lacunas e conflitos entre os clientes e desenvolvedores.</p>
+<h2 id="lean">Lean</h2>
+<p>Pensamento lean é um processo dinâmico, determinado pelo conhecimento e focalizado no cliente, para qual todos os colaboradores da empresa eliminam de forma contínua desperdícios e criam valor.</p>
+<h2 id="continuous-integration">Continuous Integration</h2>
+<p>Prática de desenvolvimento de software para garantir que o código, por exemplo em uma feature branch de um repositório de código seja mesclado com a branch principal somente depois de passar por uma série de verificações de dependências, testes de unidade e integração e uma compilação bem sucedida. Se houver erros no caminho, a compilação falhará e a equipe será notificada. Os principais objetivos da integração contínua são encontrar bugs mais rápido, melhorar a qualidade, reduzir o tempo para lançar novas atualizações de software, e o mais importante dar visão a todo o time.</p>
+<h2 id="continuous-delivery">Continuous Delivery</h2>
+<p>A missão aqui é garantir que podemos entregar nossa aplicação a qualquer momento. Com o CD, o artefato gerado pelo CI é empacotado e está sempre pronto para ser implantada em um ou mais ambientes.</p>
+<h2 id="continuous-deployment">Continuous Deployment</h2>
+<p>A implantação contínua vai um passo além da entrega contínua. Com essa prática, todas as alterações que passam em todos os estágios do seu pipeline são liberados para seus clientes. Não há intervenção humana e apenas um teste com falha impedirá que uma nova alteração seja implantada em produção.</p>
+<h2 id="gerenciamento-de-configuração">Gerenciamento de Configuração</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<h2 id="infraestrutura-como-código">Infraestrutura como Código</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<h2 id="estratégias-de-deploy">Estratégias de Deploy</h2>
+<h3 id="rolling">Rolling</h3>
+<p align="center">
+  <img width="600" height="600" src="/images/rolling.png">
+</p>
+<p>O deploy é feito gradualmente, substituindo a versão antiga. A versão antiga só é &ldquo;desligada&rdquo; quando a nova versão está pronta para ser executada, ou seja em algum momento dessa estratégia de deploy ambas as versões coexistem ao mesmo tempo em produção sem afetar a funcionalidade ou a experiência do usuário.</p>
+<h3 id="blue-green">Blue-Green</h3>
+<p align="center">
+  <img src="/images/blue-green.png">
+</p>
+<p>O deploy blue-green consiste em ter dois ambientes idênticos, cujo na frente desses ambientes exista um load balancer que permita o direcionamento do tráfego para o ambiente desejado. Uma das maiores vantagens dessa estratégia é que o serviço vai ter praticamente zero de indisponibilidade, já que a mudança no load balancer é praticamente instantânea. Outra vantagem é a possibilidade de poder realizar os testes em produção, antes de liberar o serviço para ser utilizado pelos usuários. A desvantagem é que por essa estratégia precisar de um mirror ela irá consumir mais recursos de infraestrutura. Além disso por haver a troca física do switch pelo load balancer a session, por exemplo, será perdida e por isso seu código precisa estar preparado para esse tipo de abordagem.</p>
+<h3 id="canary">Canary</h3>
+<p align="center">
+  <img width="600" height="600" src="/images/canary.png">
+</p>
+<p>Basicamente ela consiste em colocar a nova versão em produção, porém apenas para uma parcela de usuários. Essa configuração na maioria das ferramentas pode ser feita através de feature toggle, isso significa que podemos liberar, por exemplo, o novo serviço apenas para usuários do sexo feminino, ou para usuários com mais de 30 anos, etc. A grande vantagem dessa abordagem é poder ir testando a nova versão aos poucos com usuários reais e acompanhar os logs para ver se está tudo correndo bem, assim liberando a nova versão gradualmente. A grande desvantagem, é que se a aplicação não tem um grande volume de usuários, a validação no ambiente de produção pode demorar mais tempo do que o desejado.</p>
+<p>O principal desafio da implantação do canary é criar uma maneira de rotear alguns usuários para a nova versão. Algumas ténicas: Expor os usuários internos à implantação do canary antes de permitir o acesso do usuário externo, roteamento básico com base no range de IP de origem ou liberar a aplicação em regiões geográficas específicas.</p>
+<h2 id="feature-toggle">Feature Toggle</h2>
+<p>Feature Flag, também conhecida como Feature Toggle, é uma técnica que permite que mudanças de comportamento aconteçam na sua aplicação em tempo real sem a realização de nenhum deployment.</p>
+<p>Basicamente você liga/desliga features na sua aplicação e para isso a condicional if é esencial.</p>
+<p>Através de uma variável que determina se uma feature deve ser mostrada ou não e uma condicional para acionar os métodos corretos. Porém o objetivo é desacoplar a release de features do processo de deployment, então essa abordagem não é uma boa ideia, pois teríamos que alterar sempre essa variável.</p>
+<p>Outra alternativa é a utlização de arquivos de configuração de forma dinâmica, onde inúmeros key-value determinam o comportamento das flags. Assim é possível alterar esses valores em qualquer momento e a aplicação mudará seu comportamento instantaneamente.</p>
+<p align="center">
+  <img width="800" height="800" src="/images/feature_toggle.png">
+</p>
+<p>Vantenges:
+Entregas com mais frequencia;
+Minimizar riscos;
+Aumentar produtividade;
+Direcionar usuários para testes A/B.</p>
+<p>Boas Práticas</p>
+<p>Feature Toggles podem funcionar muito bem, mas de forma geral, é uma boa prática mantê-los de curta duração e com uma quantidade pequena. Flags de longa duração adicionam complexidade e torna-se um débito técnico. A limpeza é de suma importância para manter uma base de código limpa.</p>
+<p>Um outro ponto de atenção é criar uma camada de abstração para o gerenciamento das flags para que seu código tenha o mínimo possível de acoplamento com esse recurso.</p>
+<div class="edit-meta">
+Last updated on 17 Oct 2017
+
+
+<br>
+Published on 17 Oct 2017
+<br><a href="https://github.com/thingsym/hugo-theme-techdoc/edit/master/content/DevOps/table-of-contents.md" class="edit-page"><i class="fas fa-pen-square"></i> Edit on GitHub</a></div><nav class="pagination"><a class="nav nav-prev" href="https://dozzaki.github.io/devops/" title="DevOps"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - DevOps</a>
+
+</nav><footer></footer>
+</main><div class="sidebar">
+
+<nav class="slide-menu">
+<ul>
+<li class=""><a href="https://dozzaki.github.io">Home</a></li>
+
+<li class="parent has-sub-menu"><a href="https://dozzaki.github.io/devops/">DevOps<span class="mark opened">-</span></a>
+  
+<ul class="sub-menu">
+<li class="active"><a href="https://dozzaki.github.io/devops/table-of-contents/">Notes</a></li>
+</ul>
+  
+</li>
+
+
+
+
+
+<li class=" has-sub-menu"><a href="https://dozzaki.github.io/cloud/">Cloud<span class="mark closed">+</span></a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://dozzaki.github.io/cloud/1/">Chapter 1-1</a></li>
+<li class=""><a href="https://dozzaki.github.io/cloud/2/">Chapter 1-2</a></li>
+<li class=""><a href="https://dozzaki.github.io/cloud/3/">Chapter 1-3</a></li>
+<li class=""><a href="https://dozzaki.github.io/cloud/4/">Chapter 1-4</a></li>
+</ul>
+  
+</li>
+</ul>
+</nav>
+
+
+
+<div class="sidebar-footer"></div>
+</div>
+</div><a href="#" id="backtothetop-fixed" class="backtothetop"
+ data-backtothetop-duration="600"
+ data-backtothetop-easing="easeOutQuart"
+ data-backtothetop-fixed-fadeIn="1000"
+ data-backtothetop-fixed-fadeOut="1000"
+ data-backtothetop-fixed-bottom="10"
+ data-backtothetop-fixed-right="20">
+<span class="fa-layers fa-fw">
+<i class="fas fa-circle"></i>
+<i class="fas fa-arrow-circle-up"></i>
+</span></a>
+</div>
+</body>
+</html>

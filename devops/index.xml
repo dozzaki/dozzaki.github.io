@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DevOps on CLOUDVISOR</title>
+    <link>https://dozzaki.github.io/devops/</link>
+    <description>Recent content in DevOps on CLOUDVISOR</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 17 Oct 2017 15:26:15 +0000</lastBuildDate>
+    
+	<atom:link href="https://dozzaki.github.io/devops/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Notes</title>
+      <link>https://dozzaki.github.io/devops/table-of-contents/</link>
+      <pubDate>Tue, 17 Oct 2017 15:26:15 +0000</pubDate>
+      
+      <guid>https://dozzaki.github.io/devops/table-of-contents/</guid>
+      <description>Introdução Atualmente, a maior mudança no desenvolvimento de software é a frequencia de implantações. As equipes de produto implantam versões para produção mais cedo (e com mais frequencia). Os ciclos de lançamento de meses ou anos estão se tornando raros, especialmente entre aqueles que desenvolvem produtos e serviços baseado em software.
+Os benefícios de ciclos de implantação mais curtos são claros, time to market reduzido, os clientes obtêm valor do produto em menos tempo e o feedback do cliente também flui de volta para a equipe do produto mais rápido, o que significa que a equipe pode iterar os recursos e corrgir problemas mais rapidamente.</description>
+    </item>
+    
+  </channel>
+</rss>

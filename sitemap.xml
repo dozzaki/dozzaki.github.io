@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://dozzaki.github.io/sample/build-in-shortcodes/</loc>
+    <lastmod>2017-10-17T15:26:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dozzaki.github.io/sample/custom-shortcodes/</loc>
+    <lastmod>2017-10-17T15:26:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dozzaki.github.io/devops/</loc>
+    <lastmod>2017-10-17T15:26:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dozzaki.github.io/devops/table-of-contents/</loc>
+    <lastmod>2017-10-17T15:26:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dozzaki.github.io/sample/</loc>
+    <lastmod>2017-10-17T15:26:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dozzaki.github.io/sample/table-of-contents/</loc>
+    <lastmod>2017-10-17T15:26:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dozzaki.github.io/cheatsheets/git/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dozzaki.github.io/cheatsheets/systemd/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dozzaki.github.io/cheatsheets/</loc>
+    <lastmod>2017-10-17T15:26:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dozzaki.github.io/cloud/</loc>
+    <lastmod>2017-10-17T15:26:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dozzaki.github.io/</loc>
+    <lastmod>2020-03-30T18:49:06+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dozzaki.github.io/sample/search-shortcode/</loc>
+    <lastmod>2020-03-30T18:49:06+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dozzaki.github.io/cloud/1/</loc>
+    <lastmod>2017-10-17T15:26:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dozzaki.github.io/cloud/2/</loc>
+    <lastmod>2017-10-17T15:26:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dozzaki.github.io/cloud/3/</loc>
+    <lastmod>2017-10-17T15:26:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dozzaki.github.io/cloud/4/</loc>
+    <lastmod>2017-10-17T15:26:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dozzaki.github.io/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dozzaki.github.io/tags/</loc>
+  </url>
+  
+</urlset>

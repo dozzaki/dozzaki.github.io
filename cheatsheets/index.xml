@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloud on CLOUDVISOR</title>
+    <link>https://dozzaki.github.io/cheatsheets/</link>
+    <description>Recent content in Cloud on CLOUDVISOR</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 17 Oct 2017 15:26:15 +0000</lastBuildDate>
+    
+	<atom:link href="https://dozzaki.github.io/cheatsheets/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git Cheat Sheet</title>
+      <link>https://dozzaki.github.io/cheatsheets/git/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dozzaki.github.io/cheatsheets/git/</guid>
+      <description>GIT CONFIGURATION      git config &amp;ndash;global user.name &amp;ldquo;Your Name&amp;rdquo; Set the name that will be attached to your commits and tags   git config &amp;ndash;global user.email &amp;ldquo;you@example.com Set the e-mail address that will be attached to your commits and tags   git config &amp;ndash;global color.ui auto Enable some colorization of git output       STARTING A PROJECT      git init [project name] Create new local repository.</description>
+    </item>
+    
+    <item>
+      <title>Systemd Cheat Sheet</title>
+      <link>https://dozzaki.github.io/cheatsheets/systemd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dozzaki.github.io/cheatsheets/systemd/</guid>
+      <description>WORKING WITH SERVICES      systemctl status service See if service is running / enable   systemctl stop service Stop a running service   systemctl start service Start a service   systemctl restart service Restart a running service   systemctl reload service Reload all config files in service   systemctl reload-or-restart service Reload the configuration in-place if available   systemctl daemon-reload Must run to reload changed unit files   systemctl &amp;ndash;failed Shows services that failed to run   systemctl reset-failed Resets any units from failed state   systemctl enable service Enable a service to start on boot   systemctl disable service Disable service&amp;ndash;won’t start at boot   systemctl is-active service See if a unit is currently active   systemctl is-enabled service See if service is enable   systemctl is-failed service See if service is in a failed state   systemctl show service Show properties of a service (or other unit)   systemctl cat service Show the unit file   systemctl edit service Create snippit to drop in unit file   systemctl edit &amp;ndash;full service Edit entire unit file for service   systemctl -H host status network Run any systemctl command remotely       VIEWING systemd INFORMATION      systemctl list-dependencies Show a unit’s dependencies   systemctl list-sockets List sockets and what activates   systemctl list-jobs View active systemd jobs   systemctl list-unit-files See unit files and their states   systemctl list-units Show if units are loaded/active   systemctl list-units &amp;ndash;all display units of the type   systemctl list-units &amp;ndash;all &amp;ndash;state=inactive Display service of the type status   systemctl list-units &amp;ndash;type=service Display service of the type service   systemctl mask Prevent the service started   systemctl unmask Making it available for use again   systemctl get-default List default target (like run level)   systemctl set-default Set a different default target       CHANGING SYSTEM STATES      systemctl reboot Reboot the system (reboot.</description>
+    </item>
+    
+  </channel>
+</rss>

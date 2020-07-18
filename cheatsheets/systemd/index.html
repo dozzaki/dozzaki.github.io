@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Systemd Cheat Sheet - CLOUDVISOR</title>
+<meta name="generator" content="Hugo 0.69.0" />
+<link href="https://dozzaki.github.ioindex.xml" rel="alternate" type="application/rss+xml">
+<link rel="canonical" href="https://dozzaki.github.io/cheatsheets/systemd/">
+<link rel="stylesheet" href="https://dozzaki.github.io/css/theme.min.css">
+<script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<link rel="stylesheet" href="https://dozzaki.github.io/css/chroma.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
+<script src="https://dozzaki.github.io/js/bundle.js"></script><style>
+:root {}
+</style>
+<meta property="og:title" content="Systemd Cheat Sheet" />
+<meta property="og:description" content="WORKING WITH SERVICES      systemctl status service See if service is running / enable   systemctl stop service Stop a running service   systemctl start service Start a service   systemctl restart service Restart a running service   systemctl reload service Reload all config files in service   systemctl reload-or-restart service Reload the configuration in-place if available   systemctl daemon-reload Must run to reload changed unit files   systemctl &ndash;failed Shows services that failed to run   systemctl reset-failed Resets any units from failed state   systemctl enable service Enable a service to start on boot   systemctl disable service Disable service&ndash;won’t start at boot   systemctl is-active service See if a unit is currently active   systemctl is-enabled service See if service is enable   systemctl is-failed service See if service is in a failed state   systemctl show service Show properties of a service (or other unit)   systemctl cat service Show the unit file   systemctl edit service Create snippit to drop in unit file   systemctl edit &ndash;full service Edit entire unit file for service   systemctl -H host status network Run any systemctl command remotely       VIEWING systemd INFORMATION      systemctl list-dependencies Show a unit’s dependencies   systemctl list-sockets List sockets and what activates   systemctl list-jobs View active systemd jobs   systemctl list-unit-files See unit files and their states   systemctl list-units Show if units are loaded/active   systemctl list-units &ndash;all display units of the type   systemctl list-units &ndash;all &ndash;state=inactive Display service of the type status   systemctl list-units &ndash;type=service Display service of the type service   systemctl mask Prevent the service started   systemctl unmask Making it available for use again   systemctl get-default List default target (like run level)   systemctl set-default Set a different default target       CHANGING SYSTEM STATES      systemctl reboot Reboot the system (reboot." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dozzaki.github.io/cheatsheets/systemd/" />
+<meta property="og:image" content="https://dozzaki.github.io/images/og-image.png"/>
+<meta property="og:site_name" content="Cloudvisor Techdocs" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://dozzaki.github.io/images/og-image.png"/>
+
+<meta name="twitter:title" content="Systemd Cheat Sheet"/>
+<meta name="twitter:description" content="WORKING WITH SERVICES      systemctl status service See if service is running / enable   systemctl stop service Stop a running service   systemctl start service Start a service   systemctl restart service Restart a running service   systemctl reload service Reload all config files in service   systemctl reload-or-restart service Reload the configuration in-place if available   systemctl daemon-reload Must run to reload changed unit files   systemctl &ndash;failed Shows services that failed to run   systemctl reset-failed Resets any units from failed state   systemctl enable service Enable a service to start on boot   systemctl disable service Disable service&ndash;won’t start at boot   systemctl is-active service See if a unit is currently active   systemctl is-enabled service See if service is enable   systemctl is-failed service See if service is in a failed state   systemctl show service Show properties of a service (or other unit)   systemctl cat service Show the unit file   systemctl edit service Create snippit to drop in unit file   systemctl edit &ndash;full service Edit entire unit file for service   systemctl -H host status network Run any systemctl command remotely       VIEWING systemd INFORMATION      systemctl list-dependencies Show a unit’s dependencies   systemctl list-sockets List sockets and what activates   systemctl list-jobs View active systemd jobs   systemctl list-unit-files See unit files and their states   systemctl list-units Show if units are loaded/active   systemctl list-units &ndash;all display units of the type   systemctl list-units &ndash;all &ndash;state=inactive Display service of the type status   systemctl list-units &ndash;type=service Display service of the type service   systemctl mask Prevent the service started   systemctl unmask Making it available for use again   systemctl get-default List default target (like run level)   systemctl set-default Set a different default target       CHANGING SYSTEM STATES      systemctl reboot Reboot the system (reboot."/>
+<meta itemprop="name" content="Systemd Cheat Sheet">
+<meta itemprop="description" content="WORKING WITH SERVICES      systemctl status service See if service is running / enable   systemctl stop service Stop a running service   systemctl start service Start a service   systemctl restart service Restart a running service   systemctl reload service Reload all config files in service   systemctl reload-or-restart service Reload the configuration in-place if available   systemctl daemon-reload Must run to reload changed unit files   systemctl &ndash;failed Shows services that failed to run   systemctl reset-failed Resets any units from failed state   systemctl enable service Enable a service to start on boot   systemctl disable service Disable service&ndash;won’t start at boot   systemctl is-active service See if a unit is currently active   systemctl is-enabled service See if service is enable   systemctl is-failed service See if service is in a failed state   systemctl show service Show properties of a service (or other unit)   systemctl cat service Show the unit file   systemctl edit service Create snippit to drop in unit file   systemctl edit &ndash;full service Edit entire unit file for service   systemctl -H host status network Run any systemctl command remotely       VIEWING systemd INFORMATION      systemctl list-dependencies Show a unit’s dependencies   systemctl list-sockets List sockets and what activates   systemctl list-jobs View active systemd jobs   systemctl list-unit-files See unit files and their states   systemctl list-units Show if units are loaded/active   systemctl list-units &ndash;all display units of the type   systemctl list-units &ndash;all &ndash;state=inactive Display service of the type status   systemctl list-units &ndash;type=service Display service of the type service   systemctl mask Prevent the service started   systemctl unmask Making it available for use again   systemctl get-default List default target (like run level)   systemctl set-default Set a different default target       CHANGING SYSTEM STATES      systemctl reboot Reboot the system (reboot.">
+
+<meta itemprop="wordCount" content="323">
+<meta itemprop="image" content="https://dozzaki.github.io/images/og-image.png"/>
+
+
+
+<meta itemprop="keywords" content="" /></head>
+<body><div class="container"><header>
+<h1>CLOUDVISOR</h1>
+<a href="https://github.com/thingsym/hugo-theme-techdoc" class="github"><i class="fab fa-github"></i></a>
+</header>
+<div class="global-menu">
+<nav>
+<ul>
+<li><a href="/">Home</a></li><li class="parent active"><a href="">CheatSheets<i class="fas fa-angle-right"></i></a>
+<ul class="sub-menu">
+<li class="child"><a href="/cheatsheets/git/">git</a></li>
+<li class="child"><a href="/cheatsheets/systemd/">systemd</a></li>
+</ul>
+</li></ul>
+</nav>
+</div>
+<div class="content-container">
+<main><h1>Systemd Cheat Sheet</h1>
+<table>
+<thead>
+<tr>
+<th>WORKING WITH SERVICES</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>systemctl status service</td>
+<td>See if service is running / enable</td>
+</tr>
+<tr>
+<td>systemctl stop service</td>
+<td>Stop a running service</td>
+</tr>
+<tr>
+<td>systemctl start service</td>
+<td>Start a service</td>
+</tr>
+<tr>
+<td>systemctl restart service</td>
+<td>Restart a running service</td>
+</tr>
+<tr>
+<td>systemctl reload service</td>
+<td>Reload all config files in service</td>
+</tr>
+<tr>
+<td>systemctl reload-or-restart service</td>
+<td>Reload the configuration in-place if available</td>
+</tr>
+<tr>
+<td>systemctl daemon-reload</td>
+<td>Must run to reload changed unit files</td>
+</tr>
+<tr>
+<td>systemctl &ndash;failed</td>
+<td>Shows services that failed to run</td>
+</tr>
+<tr>
+<td>systemctl reset-failed</td>
+<td>Resets any units from failed state</td>
+</tr>
+<tr>
+<td>systemctl enable service</td>
+<td>Enable a service to start on boot</td>
+</tr>
+<tr>
+<td>systemctl disable service</td>
+<td>Disable service&ndash;won’t start at boot</td>
+</tr>
+<tr>
+<td>systemctl is-active service</td>
+<td>See if a unit is currently active</td>
+</tr>
+<tr>
+<td>systemctl is-enabled service</td>
+<td>See if service is enable</td>
+</tr>
+<tr>
+<td>systemctl is-failed service</td>
+<td>See if service is in a failed state</td>
+</tr>
+<tr>
+<td>systemctl show service</td>
+<td>Show properties of a service (or other unit)</td>
+</tr>
+<tr>
+<td>systemctl cat service</td>
+<td>Show the unit file</td>
+</tr>
+<tr>
+<td>systemctl edit service</td>
+<td>Create snippit to drop in unit file</td>
+</tr>
+<tr>
+<td>systemctl edit &ndash;full service</td>
+<td>Edit entire unit file for service</td>
+</tr>
+<tr>
+<td>systemctl -H host status network</td>
+<td>Run any systemctl command remotely</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>VIEWING systemd INFORMATION</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>systemctl list-dependencies</td>
+<td>Show a unit’s dependencies</td>
+</tr>
+<tr>
+<td>systemctl list-sockets</td>
+<td>List sockets and what activates</td>
+</tr>
+<tr>
+<td>systemctl list-jobs</td>
+<td>View active systemd jobs</td>
+</tr>
+<tr>
+<td>systemctl list-unit-files</td>
+<td>See unit files and their states</td>
+</tr>
+<tr>
+<td>systemctl list-units</td>
+<td>Show if units are loaded/active</td>
+</tr>
+<tr>
+<td>systemctl list-units &ndash;all</td>
+<td>display units of the type</td>
+</tr>
+<tr>
+<td>systemctl list-units &ndash;all &ndash;state=inactive</td>
+<td>Display service of the type status</td>
+</tr>
+<tr>
+<td>systemctl list-units &ndash;type=service</td>
+<td>Display service of the type service</td>
+</tr>
+<tr>
+<td>systemctl mask</td>
+<td>Prevent the service started</td>
+</tr>
+<tr>
+<td>systemctl unmask</td>
+<td>Making it available for use again</td>
+</tr>
+<tr>
+<td>systemctl get-default</td>
+<td>List default target (like run level)</td>
+</tr>
+<tr>
+<td>systemctl set-default</td>
+<td>Set a different default target</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>CHANGING SYSTEM STATES</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>systemctl reboot</td>
+<td>Reboot the system (reboot.target)</td>
+</tr>
+<tr>
+<td>systemctl poweroff</td>
+<td>Power off the system (poweroff.target)</td>
+</tr>
+<tr>
+<td>systemctl emergency</td>
+<td>Put in emergency mode (emergency.target)</td>
+</tr>
+<tr>
+<td>systemctl default</td>
+<td>Back to default target (multi-user.target)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>VIEWING LOG MESSAGES</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>journalctl</td>
+<td>Show all collected log messages</td>
+</tr>
+<tr>
+<td>journalctl -u network.service</td>
+<td>See network service messages</td>
+</tr>
+<tr>
+<td>journalctl -f</td>
+<td>Follow messages as they appear</td>
+</tr>
+<tr>
+<td>journalctl -k</td>
+<td>Show only kernel messages</td>
+</tr>
+</tbody>
+</table>
+<div class="edit-meta">
+
+<br><a href="https://github.com/thingsym/hugo-theme-techdoc/edit/master/content/CheatSheets/systemd.md" class="edit-page"><i class="fas fa-pen-square"></i> Edit on GitHub</a></div><nav class="pagination"><a class="nav nav-prev" href="https://dozzaki.github.io/cheatsheets/git/" title="Git Cheat Sheet"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Git Cheat Sheet</a>
+<a class="nav nav-next" href="https://dozzaki.github.io/cloud/" title="Cloud">Next - Cloud <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav><footer></footer>
+</main><div class="sidebar">
+
+<nav class="slide-menu">
+<ul>
+<li class=""><a href="https://dozzaki.github.io">Home</a></li>
+
+<li class=" has-sub-menu"><a href="https://dozzaki.github.io/devops/">DevOps<span class="mark closed">+</span></a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://dozzaki.github.io/devops/table-of-contents/">Notes</a></li>
+</ul>
+  
+</li>
+
+
+
+
+
+<li class=" has-sub-menu"><a href="https://dozzaki.github.io/cloud/">Cloud<span class="mark closed">+</span></a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://dozzaki.github.io/cloud/1/">Chapter 1-1</a></li>
+<li class=""><a href="https://dozzaki.github.io/cloud/2/">Chapter 1-2</a></li>
+<li class=""><a href="https://dozzaki.github.io/cloud/3/">Chapter 1-3</a></li>
+<li class=""><a href="https://dozzaki.github.io/cloud/4/">Chapter 1-4</a></li>
+</ul>
+  
+</li>
+</ul>
+</nav>
+
+
+
+<div class="sidebar-footer"></div>
+</div>
+</div><a href="#" id="backtothetop-fixed" class="backtothetop"
+ data-backtothetop-duration="600"
+ data-backtothetop-easing="easeOutQuart"
+ data-backtothetop-fixed-fadeIn="1000"
+ data-backtothetop-fixed-fadeOut="1000"
+ data-backtothetop-fixed-bottom="10"
+ data-backtothetop-fixed-right="20">
+<span class="fa-layers fa-fw">
+<i class="fas fa-circle"></i>
+<i class="fas fa-arrow-circle-up"></i>
+</span></a>
+</div>
+</body>
+</html>
